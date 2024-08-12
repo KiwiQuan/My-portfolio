@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Snake Game!</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>   
+    
 <div id="gameContainer">
-<canvas id="gameBoard" width="500" height="500"></canvas>
-<div id="scoreText">0</div>
-<label for="snakeColor">Snake Color:</label>
-<input type="text" placeholder="Change color" id="snakeColor">
-<label for="gridSize">Grid Size:</label>
-<input type="number" placeholder="Change size" id="gridSize">
-<label for="snakeSpeed">Snake Speed:</label>
-<input type="number" placeholder="Snake Speed" id="snakeSpeed">
-<button id="resetBtn">Reset</button>
+    <div class="boardCont">
+        <canvas id="gameBoard" width="500" height="500"></canvas>
+        <div class="score">
+            <div id="scoreText">0</div>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="modify">
+            <div class="option">
+                <div id="snakeColorText">Snake Color:</div>
+                <input type="text" placeholder="Change color" id="snakeColor" value="green">
+            </div>
+            <div class="option">
+                <div id="gridSizeText">Grid Size:</div>
+                <input type="number" placeholder="Change size" id="gridSize" value="25">
+            </div>
+        <div class="option">
+            <div id="snakeSpeedText">Snake Speed:</div>
+            <input type="number" placeholder="Snake Speed" id="snakeSpeed" value="75">          
+        </div>
+            <div class="option">
+                <div id="boardBackgroundText">Background Color:</div>
+                <input type="text" placeholder="Background color" id="boardBackground" value="white">             
+            </div>
+            <div class="option">
+                <div for="foodColorText">Food Color:</div>
+                <input type="text" placeholder="Food Color" id="foodColor" value="red">              
+            </div>  
+        </div>
+    </div>
+
 </div>
+
+
     <script src="index.js"></script>
 </body>
 </html>

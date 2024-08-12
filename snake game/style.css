@@ -1,7 +1,29 @@
 #gameContainer{
-    text-align: center;
+   display: flex;
+   justify-content: center;
+   height: 50vh;
+}
+
+.modify{
+    display: grid;
+    justify-content: center;
+    position: relative;
+    bottom: 180%;
+    left: 80%;
+}
+
+.option{
+    padding: 25px;
+}
+
+.score {
+   text-align: center;
+}
+
+.boardCont {
 
 }
+
 
 #gameBoard{
     border: 3px solid;
@@ -9,6 +31,7 @@
 #scoreText{
     font-family: "Permanent Marker", cursive;
     font-size: 60px;
+    
 }
 
 #resetBtn{
