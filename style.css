@@ -3,6 +3,8 @@ h1{
 }
 body{
     text-align: center;
+    height: 100vh;
+    background-image: linear-gradient(to top, green, white);
 }
 
 a{
