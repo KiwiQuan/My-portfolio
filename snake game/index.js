@@ -5,16 +5,12 @@ const resetBtn = document.querySelector("#resetBtn")
 const gameWidth = gameBoard.width
 const gameHeight = gameBoard.height
 const snakeBorder = "black"
-let boardBackground
-let snakeColor
-let foodColor = "red"
-let gridSize = 25
-let snakeSpeed
-let boardBackgroundVal = $("#boardBackground").val()
-
-
-
-const unitSize = Number.parseInt(gridSize)
+let boardBackground = $("#boardBackground").val()
+let snakeColor = $("#snakeColor").val()
+let foodColor = $("#foodColor").val()
+let gridSize = $("#gridSize").val()
+let snakeSpeed = $("#snakeSpeed").val()
+let unitSize = Number.parseInt(gridSize)
 let running = false
 let xVelocity = unitSize
 let yVelocity = 0
@@ -31,8 +27,12 @@ let snake = [
 
 window.addEventListener("keydown", changeDirection)
 $("#resetBtn").click( () => {
-    
-    console.log(boardBackgroundVal)
+    gridSize = $("#gridSize").val()
+    unitSize = Number.parseInt(gridSize)
+    snakeSpeed = $("#snakeSpeed").val()
+    foodColor = $("#foodColor").val()
+    snakeColor = $("#snakeColor").val()
+    boardBackground = $("#boardBackground").val()
     resetGame()
 })
 
