@@ -8,21 +8,19 @@
     display: grid;
     justify-content: center;
     position: relative;
-    bottom: 180%;
+    bottom: 135%;
     left: 80%;
 }
 
 .option{
-    padding: 25px;
+    padding: 10px;
 }
 
 .score {
    text-align: center;
 }
 
-.boardCont {
 
-}
 
 
 #gameBoard{
