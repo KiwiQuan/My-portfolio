@@ -34,7 +34,8 @@ const includeLowercase = true
 const includeUppercase = true
 const includeNumbers = true
 const includeSymbols = true  
+const passwordText = document.getElementById("password")
 
 const password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols)
-
+passwordText.textContent = `password: ${password}`
 console.log(`Generated password: ${password}`)
