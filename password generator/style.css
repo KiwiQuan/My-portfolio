@@ -4,4 +4,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.options{
+    padding: 15px;
 }

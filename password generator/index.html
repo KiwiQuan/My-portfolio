@@ -10,7 +10,20 @@
 <body>
 <div class="container">
 <div id="password">Password:</div>
-<button>Generate</button>
+<div class="options">
+    <label for="length">Password Length:</label>
+    <input type="number" value="12" placeholder="password length" id="length">
+    <label for="lowercase">Include Lowercase:</label>
+    <input type="checkbox"  id="lowercase" checked>
+    <label for="uppercase">Include Uppercase:</label>
+    <input type="checkbox"  id="uppercase" checked>
+    <label for="numbers">Include Numbers:</label>
+    <input type="checkbox"  id="numbers" checked>
+    <label for="symbols">Include Symbols:</label>
+    <input type="checkbox"  id="symbols" checked>
+</div>
+
+<button onclick="generateBtn()">Generate</button>
 </div>
 
     <script src="index.js"></script>
