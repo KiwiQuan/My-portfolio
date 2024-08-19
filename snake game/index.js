@@ -1,3 +1,5 @@
+let timeout = setTimeout
+let nextTurn
 const gameBoard = document.querySelector("#gameBoard")
 const ctx = gameBoard.getContext("2d")
 const scoreText = document.querySelector("#scoreText")
@@ -49,9 +51,10 @@ function gameStart(){
 }
 function nextTick(){
     if(running){
-        setTimeout(()=>{
+        timeout = setTimeout(()=>{
             clearBoard()
             drawFood()
+            turn()
             moveSnake()
             drawSnake()
             checkGameOver()
@@ -67,6 +70,7 @@ function clearBoard(){
 }
 function resetGame(){
 score = 0
+nextTurn = null
 xVelocity = unitSize
 yVelocity = 0
 snake = [
@@ -76,8 +80,10 @@ snake = [
     {x:unitSize, y:0},
     {x:0, y:0}
 ]
+clearTimeout(timeout)
 gameStart()
 }
+
 function changeDirection(event){
 const keyPressed = event.key
 const LEFT = "a"
@@ -110,6 +116,28 @@ switch (true){
 }
 
 }
+
+function turn(){
+    switch(true) {
+        case (nextTurn == "turnLeft"):
+            xVelocity = -unitSize;
+            yVelocity = 0;
+            break;
+        case (nextTurn == "turnUp"):
+            xVelocity = 0;
+            yVelocity = -unitSize;
+            break;
+        case (nextTurn == "turnRight"):
+            xVelocity = unitSize;
+            yVelocity = 0;
+            break;
+        case (nextTurn == "turnDown"):
+            xVelocity = 0;
+            yVelocity = unitSize;
+            break;
+    }
+};
+
 function createFood(){
     function randomFood(min, max){
         const randNum = Math.round((Math.random() * (max - min) + min) / unitSize) * unitSize
