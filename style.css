@@ -67,4 +67,15 @@ a {
     color: inherit; /* Inherit color from parent elements */
 }
 
+@media (max-width: 600px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects > div {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
 
