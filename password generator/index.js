@@ -42,6 +42,6 @@ function generateBtn(){
 
 
    const password = generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols)
-   passwordText.textContent = `password: ${password}`
+   passwordText.textContent = `Password: ${password}`
 }
 

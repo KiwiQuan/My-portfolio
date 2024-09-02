@@ -1,12 +1,48 @@
-.container{
+.container {
     display: flex;
-    height: 95svh;
+    height: 95vh; /* 'svh' changed to 'vh' for consistency */
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between child elements */
+    padding: 20px;
 }
 
-.options{
+.options {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between option rows */
+    width: 300px; /* Fixed width for better alignment */
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between checkbox and label */
+}
+
+#length {
+ 
+    padding: 5px;
+    box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
