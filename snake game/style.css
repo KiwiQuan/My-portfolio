@@ -1,44 +1,106 @@
-#gameContainer{
-   display: flex;
-   justify-content: center;
-   height: 50vh;
+/* style.css */
+
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.modify{
-    display: grid;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Game Container */
+
+#gameContainer {
+    display: flex;
     justify-content: center;
-    position: relative;
-    bottom: 135%;
-    left: 80%;
+    
+    align-items: center;
+    flex-direction: column;
 }
 
-.option{
-    padding: 10px;
+.boardCont {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+/* Game Board */
+
+#gameBoard {
+    border: 3px solid #ddd;
+    border-radius: 10px;
 }
+
+/* Score */
 
 .score {
-   text-align: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-
-
-
-#gameBoard{
-    border: 3px solid;
-}
-#scoreText{
-    font-family: "Permanent Marker";
+#scoreText {
+    font-family: "Permanent Marker", cursive;
     font-size: 60px;
-    
+    color: #333;
 }
 
-#resetBtn{
-    font-family: "Permanent Marker";
+#resetBtn {
+    font-family: "Permanent Marker", cursive;
     font-size: 22px;
     width: 100px;
     height: 50px;
-    border: 4px solid;
+    border: none;
     border-radius: 15px;
+    background-color: #333;
+    color: #fff;
     cursor: pointer;
-    margin-top: 20px;
+}
+
+/* Modify Options */
+
+.modify {
+    position: absolute;
+    top: 50%;
+    left: 100%; /* adjust this value to position it to the side of the game board */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.option {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.option input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.option label {
+    margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 600px) {
+    #gameContainer {
+        height: auto;
+    }
+    .boardCont {
+        max-width: 90%;
+    }
 }
