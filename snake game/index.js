@@ -57,6 +57,7 @@ function nextTick(){
             turn()
             moveSnake()
             drawSnake()
+            drawPopups() 
             checkGameOver()
             nextTick()
         }, snakeSpeed)
@@ -64,6 +65,23 @@ function nextTick(){
         displayGameOver()
     } 
 }
+
+function drawPopups() {
+    ctx.textAlign = 'center';
+    ctx.font = '20px Arial';
+    
+    popups = popups.filter(popup => {
+        popup.y -= 1;
+        popup.alpha -= 0.02;
+        if (popup.alpha > 0) {
+            ctx.fillStyle = `rgba(0, 255, 0, ${popup.alpha})`;
+            ctx.fillText('+1', popup.x + unitSize / 2, popup.y);
+            return true;
+        }
+        return false;
+    });
+}
+
 function clearBoard(){
     ctx.fillStyle = boardBackground
     ctx.fillRect(0, 0, gameWidth, gameHeight)
@@ -151,6 +169,7 @@ function drawFood(){
     ctx.fillStyle = foodColor
     ctx.fillRect(foodX, foodY, unitSize, unitSize)
 }
+let popups = [];
 function moveSnake(){
     const head = {x: snake[0].x + xVelocity,
                   y: snake[0].y + yVelocity}
@@ -160,19 +179,51 @@ function moveSnake(){
         score += 1
         scoreText.textContent = score
         createFood()
+        // Add popup
+        popups.push({x: foodX, y: foodY, alpha: 1});
     }else{
         snake.pop()
     }
 
 }
 function drawSnake(){
-    ctx.fillStyle = snakeColor
-    ctx.strokeStyle = snakeBorder
-    snake.forEach(snakePart =>{
-        ctx.fillRect(snakePart.x, snakePart.y, unitSize, unitSize)
-        ctx.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize)
-    })
+    ctx.fillStyle = snakeColor;
+    ctx.strokeStyle = snakeBorder;
+    snake.forEach((snakePart, index) => {
+        // Gradient effect for snake body
+        const gradient = ctx.createLinearGradient(snakePart.x, snakePart.y, snakePart.x + unitSize, snakePart.y + unitSize);
+        gradient.addColorStop(0, snakeColor);
+        gradient.addColorStop(1, lightenColor(snakeColor, 20));
+        ctx.fillStyle = gradient;
+        
+        // Rounded corners for snake parts
+        ctx.beginPath();
+        ctx.roundRect(snakePart.x, snakePart.y, unitSize, unitSize, unitSize / 5);
+        ctx.fill();
+        ctx.stroke();
+        
+        // Eyes for the snake head
+        if (index === 0) {
+            const eyeSize = unitSize / 5;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(snakePart.x + unitSize / 3, snakePart.y + unitSize / 3, eyeSize, 0, 2 * Math.PI);
+            ctx.arc(snakePart.x + 2 * unitSize / 3, snakePart.y + unitSize / 3, eyeSize, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+    });
 }
+
+// Helper function to lighten a color
+function lightenColor(color, percent) {
+    const num = parseInt(color.replace("#",""), 16),
+    amt = Math.round(2.55 * percent),
+    R = (num >> 16) + amt,
+    G = (num >> 8 & 0x00FF) + amt,
+    B = (num & 0x0000FF) + amt;
+    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+}
+
 function checkGameOver(){
     switch(true){
 
