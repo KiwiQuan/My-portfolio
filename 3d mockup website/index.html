@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>3D Objects and Account Creation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Logo">
+            </div>
+            <h2>Find 3D Objects, Mockups and Illustrations here.</h2>
+            <div class="objects-container">
+                <!-- 3D objects image is set as background in CSS -->
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="language-selector">English (UK) ▼</div>
+            <h1>Create Account</h1>
+            <div class="social-buttons">
+                <button class="google-btn">
+                    <img src="imgs/google 1.png" alt="Google icon" class="google-icon">
+                    Sign up with Google
+                </button>
+                <button class="facebook-btn">
+                    <img src="imgs/facebook 1.png" alt="Facebook icon" class="facebook-icon">
+                    Sign up with Facebook
+                </button>
+            </div>
+            <div class="divider">- OR -</div>
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <div class="password-input-container">
+                    <input type="password" placeholder="Password" required>
+                    <img src="imgs/blind 1.png" alt="Toggle password visibility" class="password-toggle">
+                </div>
+                <button type="submit" class="create-account-btn">Create Account</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+    <!-- Add this script tag at the end of your body -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.querySelector('input[type="password"]');
+        const passwordToggle = document.querySelector('.password-toggle');
+
+        passwordToggle.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            // Optionally change the icon here based on password visibility
+        });
+    });
+    </script>
+</body>
+</html>
