@@ -208,3 +208,64 @@ a {
     height: 20px; /* Adjust as needed */
     cursor: pointer;
 }
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        flex: none;
+        width: 100%;
+    }
+
+    .left-section::after {
+        display: none;
+    }
+
+    .right-section {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .objects-container::after {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .left-section, .right-section {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+    }
+
+    .objects-container::after {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .left-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .objects-container::after {
+        width: 80%;
+        height: 80%;
+    }
+
+    .create-account-btn {
+        padding: 0.5rem;
+    }
+}
