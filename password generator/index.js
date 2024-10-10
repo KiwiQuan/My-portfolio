@@ -40,9 +40,5 @@ function generateBtn() {
     passwordText.value = password;
 }
 
-function updateLengthDisplay() {
-    const lengthInput = document.getElementById("length");
-    const lengthDisplay = document.getElementById("lengthDisplay");
-    lengthDisplay.textContent = lengthInput.value; // Update the displayed length
-}
+
 

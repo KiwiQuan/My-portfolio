@@ -81,11 +81,8 @@ html, body {
 
 /* Link Styling */
 a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    color: inherit; /* Inherit color from parent elements */
+   
+    color: inherit;
 }
 
 @media (max-width: 768px) {
