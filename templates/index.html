@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Your Portfolio - Home{% endblock %}
+
+{% block content %}
+<section class="hero mb-5">
+    <h1 class="display-4">Welcome to My Portfolio</h1>
+    <p class="lead">Frontend Developer specializing in HTML, CSS, and JavaScript</p>
+</section>
+
+<!-- Project Slideshow -->
+<section class="project-slideshow mb-5">
+    <h2>Featured Projects</h2>
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for project in projects %}
+            <a href="{{ project.project_url }}">
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img src="{{ project.image_url }}" class="d-block w-100" alt="{{ project.title }}">
+                    <div class="carousel-caption">
+                        <h5>{{ project.title }}</h5>
+                        
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<style>
+/* Make carousel controls more visible */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px;  /* Make the clickable area wider */
+    opacity: 0.9; /* Make them more visible by default */
+    /* Semi-transparent background */
+    border-radius: 50px; /* Rounded corners */
+}
+
+/* Make the arrows (icons) more visible */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for the icons */
+    padding: 20px;  /* Larger clickable area */
+    border-radius: 50%; /* Circular background */
+    width: 40px;  /* Larger icons */
+    height: 40px; /* Larger icons */
+}
+
+/* Optional hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    
+}
+
+</style>
+{% endblock %}

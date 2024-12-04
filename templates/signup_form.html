@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='3d_mockup_website/style.css') }}">
     <title>3D Objects and Account Creation</title>
 </head>
 <body>
     <div class="container">
         <div class="left-section">
             <div class="logo">
-                <img src="imgs/logo.png" alt="Logo">
+                <img src="{{ url_for('static', filename='3d_mockup_website/imgs/logo.png') }}" alt="Logo">
             </div>
             <h2>Find 3D Objects, Mockups and Illustrations here.</h2>
             <div class="objects-container">
@@ -23,11 +23,11 @@
             <h1>Create Account</h1>
             <div class="social-buttons">
                 <button class="google-btn">
-                    <img src="imgs/google 1.png" alt="Google icon" class="google-icon">
+                    <img src="{{ url_for('static', filename='3d_mockup_website/imgs/google 1.png') }}" alt="Google icon" class="google-icon">
                     Sign up with Google
                 </button>
                 <button class="facebook-btn">
-                    <img src="imgs/facebook 1.png" alt="Facebook icon" class="facebook-icon">
+                    <img src="{{ url_for('static', filename='3d_mockup_website/imgs/facebook 1.png') }}" alt="Facebook icon" class="facebook-icon">
                     Sign up with Facebook
                 </button>
             </div>
@@ -37,7 +37,7 @@
                 <input type="email" placeholder="Email Address" required>
                 <div class="password-input-container">
                     <input type="password" placeholder="Password" required>
-                    <img src="imgs/blind 1.png" alt="Toggle password visibility" class="password-toggle">
+                    <img src="{{ url_for('static', filename='3d_mockup_website/imgs/blind 1.png') }}" alt="Toggle password visibility" class="password-toggle">
                 </div>
                 <div class="form-spacer"></div>
                 <button type="submit" class="create-account-btn">Create Account</button>
