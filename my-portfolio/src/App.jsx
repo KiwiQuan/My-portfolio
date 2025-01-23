@@ -8,7 +8,7 @@ import NotFound from './components/NotFound';
 
 function App() {
   const handleProjectClick = (projectPath) => {
-    window.location.href = `/projects/${projectPath}/index.html`;
+    window.location.href = `projects/${projectPath}/index.html`;
   };
 
   return (
