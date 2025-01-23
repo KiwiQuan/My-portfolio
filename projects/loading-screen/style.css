@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.loading {
+    width: 90%;
+    max-width: 600px;
+    padding: 2rem;
+    line-height: 1.4;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    font-weight: bold;
+    text-align: center;
+}
+
+.loading__author {
+    font-weight: normal;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    color: rgba(189,189,189 ,1);
+    margin: 0.6rem 0 2rem 0;
+    display: block;
+}
+
+.loading__anim {
+    width: clamp(25px, 8vw, 35px);
+    height: clamp(25px, 8vw, 35px);
+    display: inline-block;
+    border: clamp(3px, 1.5vw, 5px) solid rgba(189,189,189 ,0.25);
+    border-left-color: Blue;  
+    border-top-color: Blue;
+    border-radius: 50%;
+    animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.dropdown {
+    margin: clamp(15px, 4vw, 25px) auto;
+    width: 90%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown input {
+    width: 100%;
+    max-width: 300px;
+    padding: clamp(8px, 2vw, 12px);
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+.dropdown input:focus {
+    outline: none;
+    border-color: Blue;
+    box-shadow: 0 0 5px rgba(0,0,255,0.3);
+}
+
+#colorText {
+    margin: 0;
+    font-weight: normal;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    text-align: center;
+}
+
+/* Media Queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .loading {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .loading {
+        padding: 1rem;
+    }
+    
+    .dropdown {
+        margin: 15px;
+    }
+}
+
+/* Ensure the input is easily clickable on mobile devices */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown input {
+        min-height: 44px;
+    }
+}
