@@ -27,6 +27,12 @@ const Projects = ({ onProjectClick }) => {
       image: "thumbnails/calculator.png",
       title: "Calculator",
       description: "A simple calculator with basic operations"
+    },
+    {
+      href: "password-generator",
+      image: "thumbnails/password.png",
+      title: "Password Generator",
+      description: "A password generator that allows you to generate a random password with customizable length and character types"
     }
   ];
 
@@ -34,7 +40,7 @@ const Projects = ({ onProjectClick }) => {
     <div className="projects-container">
       {/* Featured Project Section */}
       <section className="featured-project">
-        <h2 className="featured-project__title">Featured Project</h2>
+        <h2 className="featured-project__title">Featured Projects</h2>
         <ProjectCard 
           key={featuredProject.href}
           {...featuredProject}
