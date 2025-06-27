@@ -1,17 +1,19 @@
-import { FaHtml5, FaCss3Alt, FaJs, FaPython } from "react-icons/fa";
-import { SiJquery, SiBootstrap, SiFlask, SiSqlite, SiReact } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaPython, FaDatabase } from "react-icons/fa";
+import { SiJquery, SiBootstrap, SiFlask, SiSqlite, SiReact, SiPostgresql, SiExpress } from "react-icons/si";
 
 const Skills = () => {
   const languages = [{name: "HTML", icon: <FaHtml5 />},
                      {name: "CSS", icon: <FaCss3Alt />}, 
                      {name: "JavaScript", icon: <FaJs />}, 
-                     {name: "Python", icon: <FaPython />}];
+                     
   
-  const technologies = [{name: "Javascript", icon: <FaJs />}, 
+  const technologies = 
                         {name: "Bootstrap", icon: <SiBootstrap />}, 
-                        {name: "Flask", icon: <SiFlask />}, 
-                        {name: "SQLite", icon: <SiSqlite />}, 
-                        {name: "React", icon: <SiReact />}];
+                        
+                        {name: "SQL", icon: <FaDatabase />}, 
+                        {name: "React", icon: <SiReact />},
+                         {name: "ExpressJS", icon: <SiExpress />},
+                         {name: "PostgreSQL", icon: <SiPostgresql />} ];
 
   return (
     <section className="skills">
