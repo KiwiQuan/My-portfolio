@@ -1,5 +1,12 @@
-import { FaHtml5, FaCss3Alt, FaJs,  FaDatabase } from "react-icons/fa";
-import { SiJquery, SiBootstrap,SiReact, SiPostgresql, SiExpress } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaNodeJs } from "react-icons/fa";
+import {
+  SiJquery,
+  SiBootstrap,
+  SiReact,
+  SiPostgresql,
+  SiExpress,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const Skills = () => {
   const languages = [
@@ -14,7 +21,9 @@ const Skills = () => {
     { name: "React", icon: <SiReact /> },
     { name: "ExpressJS", icon: <SiExpress /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
-    { name: "jQuery", icon: <SiJquery /> },   
+    { name: "jQuery", icon: <SiJquery /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    { name: "NodeJS", icon: <FaNodeJs /> },
   ];
 
   return (

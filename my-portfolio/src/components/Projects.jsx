@@ -1,39 +1,24 @@
-import ProjectCard from './ProjectCard';
+import ProjectCard from "./ProjectCard";
 
 const Projects = ({ onProjectClick }) => {
   const featuredProject = {
-    href: "https://kiwiquan.github.io/E-commerce-store-Marksburg/",
-    image: "thumbnails/marksburg.png",
-    title: "E-commerce Store - Marksburg",
-    description: "A fully functional mockup e-commerce store built with React, featuring product listings, shopping cart, and checkout functionality. This project showcases my ability to create complex, interactive web applications. You can't buy anything for it is simply a mockup and there is no backend, but it's a good example of my skills.",
-    isExternal: true
+    href: "https://thepixelpal.netlify.app/",
+    image: "thumbnails/PixelPal.png",
+    title: "PixelPal - Virtual Pet Simulator",
+    description:
+      "A fully functional virtual pet simulator built with the PERN stack (PostgreSQL, Express, React, Node.js), featuring a pet that you can feed, play with, and care for. This project was a team project and showcases my ability to create complex, interactive web applications. My job was to connect the frontend to the backend and add the functionality to the pet. I setup the authentication and built the UI. This project is not fully complete but the MVP is functional. I am still working on the project by myself to add more features and improve the UI.",
+    isExternal: true,
   };
 
   const projects = [
     {
-      href: "snake-game",
-      image: "thumbnails/snake.png",
-      title: "Customizable snake game!",
-      description: "A customizable snake game where you can adjust speed, grid size, and change the background color!"
+      href: "https://kiwiquan.github.io/E-commerce-store-Marksburg/",
+      image: "thumbnails/marksburg.png",
+      title: "Marksburg E-commerce Store",
+      description:
+        "A fully functional mockup e-commerce store built with React, featuring product listings, shopping cart, and checkout functionality. This project showcases my ability to create complex, interactive web applications. You can't buy anything for it is simply a mockup and there is no backend, but it's a good example of my skills.",
+      isExternal: true,
     },
-    {
-      href: "loading-screen",
-      image: "thumbnails/loader.png",
-      title: "Just a loader animation",
-      description: "An animated loading screen with smooth transitions and customizable colors"
-    },
-    {
-      href: "calculator",
-      image: "thumbnails/calculator.png",
-      title: "Calculator",
-      description: "A simple calculator with basic operations"
-    },
-    {
-      href: "password-generator",
-      image: "thumbnails/password.png",
-      title: "Password Generator",
-      description: "A password generator that allows you to generate a random password with customizable length and character types"
-    }
   ];
 
   return (
@@ -41,7 +26,7 @@ const Projects = ({ onProjectClick }) => {
       {/* Featured Project Section */}
       <section className="featured-project">
         <h2 className="featured-project__title">Featured Projects</h2>
-        <ProjectCard 
+        <ProjectCard
           key={featuredProject.href}
           {...featuredProject}
           onProjectClick={undefined}
@@ -54,7 +39,7 @@ const Projects = ({ onProjectClick }) => {
         <h2 className="other-projects__title">Other Projects</h2>
         <div className="projects-grid">
           {projects.map((project) => (
-            <ProjectCard 
+            <ProjectCard
               key={project.href}
               {...project}
               onProjectClick={project.isExternal ? undefined : onProjectClick}
@@ -66,4 +51,4 @@ const Projects = ({ onProjectClick }) => {
   );
 };
 
-export default Projects; 
+export default Projects;
